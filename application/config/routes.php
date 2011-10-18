@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "scrud_generator";
+$route['default_controller'] = "main";
 $route['404_override'] = '';
 
 $route['admin/([a-z0-9~%.:_-]+)/new'] = 'admin/$1/new_one';
