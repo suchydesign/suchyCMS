@@ -30,7 +30,7 @@
 			<?php if(!empty($applications)): ?>
 			<select name="applications_id">
 			<?php foreach($applications as $_applications): ?>
-				<option value="<?=$_applications->id; ?>"><?=$_applications->id; ?></option>
+				<option value="<?=$_applications->id; ?>"><?=$_applications->name; ?></option>
 			<?php endforeach; ?>
 			</select>
 			<?php else: ?>
@@ -38,7 +38,7 @@
 			<?php endif; ?>
 		</td>
 	</tr>	<tr>
-		<td colspan="2"><?=form_submit('create', 'Create'); ?></td>
+		<td colspan="2"><?=form_submit('create_new', 'Create'); ?></td>
 	</tr>
 	<?=form_close(); ?>
 </table>

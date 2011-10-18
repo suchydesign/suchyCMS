@@ -12,7 +12,7 @@
 		<th>create</th>
 		<th>update</th>
 		<th>delete</th>
-		<th>applications_id</th>
+		<th>application</th>
 		<th colspan="3">actions</th>
 	</tr>
 	<?php foreach($access as $_access): ?>
@@ -22,7 +22,7 @@
 		<td><?=$_access->create; ?></td>
 		<td><?=$_access->update; ?></td>
 		<td><?=$_access->delete; ?></td>
-		<td><?=$_access->applications_id; ?></td>
+		<td><?=$_access->name; ?></td>
 		<td><?=anchor('admin/access/' . $_access->id, 'view'); ?></td>
 		<td><?=anchor('admin/access/edit/' . $_access->id, 'edit'); ?></td>
 		<td><?php 

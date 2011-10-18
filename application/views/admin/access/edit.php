@@ -31,7 +31,7 @@
 			<?php if(!empty($applications)): ?>
 			<select name="applications_id">
 			<?php foreach($applications as $_applications): ?>
-				<option value="<?=$_applications->id; ?>" <?php if($_applications->id == ($this->input->post('applications_id') ? $this->input->post('applications_id') : $access[0]->applications_id)) echo "selected=\"selected\""; ?>><?=$_applications->id; ?></option>
+				<option value="<?=$_applications->id; ?>" <?php if($_applications->id == ($this->input->post('applications_id') ? $this->input->post('applications_id') : $access[0]->applications_id)) echo "selected=\"selected\""; ?>><?=$_applications->name; ?></option>
 			<?php endforeach; ?>
 			</select>
 			<?php else: ?>
@@ -39,7 +39,8 @@
 			<?php endif; ?>
 		</td>
 	</tr>	<tr>
-		<td colspan="2"><?=form_submit('update', 'Update'); ?></td>
+		<td colspan="2">
+			<?=form_submit('update_acc', 'Update'); ?></td>
 	</tr>
 	<?=form_close(); ?>
 </table>

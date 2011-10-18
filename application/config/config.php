@@ -266,7 +266,7 @@ $config['sess_time_to_update']	= 160;
 |
 */
 $config['cookie_prefix']	= "";
-$config['cookie_domain']	= "localhost";
+$config['cookie_domain']	= "";
 $config['cookie_path']		= "/";
 $config['cookie_secure']	= FALSE;
 
@@ -293,10 +293,10 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_cookie_name' = The cookie name
 | 'csrf_expire' = The number in seconds the token should expire.
 */
-$config['csrf_protection'] = FALSE;
-$config['csrf_token_name'] = 'csrf_token';
-$config['csrf_cookie_name'] = 'csrf_token';
-$config['csrf_expire'] = 2400;
+$config['csrf_protection'] = TRUE;
+$config['csrf_token_name'] = 'csrf_token_name';
+$config['csrf_cookie_name'] = 'csrf_cookie_name';
+$config['csrf_expire'] = 1200;
 
 /*
 |--------------------------------------------------------------------------

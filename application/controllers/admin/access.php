@@ -7,6 +7,7 @@ class Access extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->output->enable_profiler(TRUE);
 		$this->load->library('form_validation');
 		$this->load->model('Access_model', 'access');
 		
@@ -40,10 +41,10 @@ class Access extends CI_Controller
 	
 	protected function _create()
 	{
-		if($this->input->post('create'))
+		if($this->input->post('create_new'))
 			if($this->form_validation->run('access/_create'))
 			{	
-				unset($_POST['create']);
+				unset($_POST['create_new']);
 				if($this->access->create($_POST))
 				{	
 					unset($_POST);
@@ -85,10 +86,10 @@ class Access extends CI_Controller
 	
 	protected function _update()
 	{
-		if($this->input->post('update'))
+		if($this->input->post('update_acc'))
 			if($this->form_validation->run('access/_update'))
 			{	
-				unset($_POST['update']);
+				unset($_POST['update_acc']);
 				if($this->access->update($_POST))	
 				{	
 					unset($_POST);
