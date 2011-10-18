@@ -19,6 +19,7 @@ class Access_model extends MY_Model
 		$query = $this->db->select('access.*, applications.name')
 						  ->from($this->tableName)
 						  ->join('applications', 'access.applications_id = applications.id')
+						  ->order_by('access.id')
 						  ->get();
 		if($query)
 			return $this->_return_array_of_obj($query->result());

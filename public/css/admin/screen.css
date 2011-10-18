@@ -130,6 +130,7 @@ div#content {
 div#content table {
 	border-collapse: separate;
 	border-spacing: 2px;
+	width: 100%;
 }
 
 div#content table th, div#content table td {
