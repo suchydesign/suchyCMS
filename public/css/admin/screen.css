@@ -1,0 +1,168 @@
+/**
+ *		CSS
+ */
+
+body {
+	font-family: Tahoma, Verdana, Arial, Sans-serif;
+	font-size: 80%;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.cleaner {
+	display:block;
+	visibility: hidden;
+	height: 0px;
+	clear: both;
+}
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+a {
+	color: #104BA9;
+}
+
+h1 {
+	font-size: 200%;
+	line-height: 2em;
+}
+
+h2 {
+	font-size: 180%;
+	line-height: 2em;
+}
+
+h3 {
+	font-size: 160%;
+	line-height: 2em;
+}
+
+h4 {
+	font-size: 140%;
+	line-height: 2em;
+}
+
+h5 {
+	font-size: 120%;
+	line-height: 2em;
+}
+
+h6 {
+	font-size: 100%;
+	line-height: 2em;
+}
+
+div#all {
+	position: relative;
+	margin: 0 auto;
+	width: 990px;
+	text-align: left;
+}
+
+div#header {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	color: #104BA9;
+}
+
+div#header form {
+	float: right;
+}
+
+ul#menu {
+	position:relative;
+	width: 100%;
+	height: 40px;
+	list-style: none;
+	background: #052D6E;
+}
+
+ul#menu li {
+	display: block;
+	float: left;
+}
+
+ul#menu li a {
+	display: block;
+	float:left;
+	padding: 0 10px;
+	line-height: 40px;
+	color: #FFE373;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 90%;
+}
+
+ul#menu li a:hover {
+	background: #447BD4;
+}
+
+div#container {
+	border: 1px solid #052D6E;
+	-webkit-box-shadow: 0 0 15px #777;
+}
+
+div#left {
+	float: left;
+	width: 150px;
+	min-height: 200px;
+	margin: 10px;
+	/*background: #FFE373;*/
+}
+
+div#content {
+	float: right;
+	width: 805px;
+	margin: 10px 10px 10px 0;
+}
+
+div#content table {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+div#content table th, div#content table td {
+	padding: 3px 6px;
+}
+
+div#content table th {
+	background: #FFE373;
+	text-align: center;
+}
+
+div#content table td {
+	background: #efefef;
+}
+
+div#footer {
+	clear: both;
+}
+
+div#footer p {
+	margin:15px;
+}
+
+div#error_message p {
+	margin: 2px;
+	padding: 2px 4px;
+	color: #A64300;
+	border: 1px solid #A64300;
+	background: #FFAB73;
+}
+
+div#error_message p.success {
+	color: #A68500;
+	border: 1px solid #A68500;
+	background: #FFE373;
+}

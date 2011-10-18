@@ -27,6 +27,7 @@ class Users extends CI_Controller
 	
 	public function new_one()
 	{
+		$data = array();
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
