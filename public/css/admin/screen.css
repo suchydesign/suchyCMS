@@ -145,6 +145,16 @@ div#content table td {
 	background: #efefef;
 }
 
+div#content ul.paginator {
+	width: 100%;
+	text-align: center;
+}
+
+div#content ul.paginator li {
+	display: inline-block;
+	padding: 6px;
+}
+
 div#footer {
 	clear: both;
 }

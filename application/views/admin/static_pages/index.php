@@ -5,6 +5,9 @@
 	<?php endif; ?>
 	<?=validation_errors(); ?>
 </div>
+<ul class="paginator">
+	<?=$this->pagination->create_links(); ?>
+</ul>
 <table>
 	<tr>
 		<th>id</th>
@@ -42,6 +45,9 @@
 	</tr>
 	<?php endforeach; ?>
 </table>
+<ul class="paginator">
+	<?=$this->pagination->create_links(); ?>
+</ul>
 <ul>
 	<li><?=anchor('admin/static_pages', 'View all'); ?></li>
 	<li><?=anchor('admin/static_pages/new', 'New'); ?></li>

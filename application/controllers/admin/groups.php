@@ -13,12 +13,19 @@ class Groups extends CI_Controller
 
 	}
 
-	public function index()
+	public function index($page = 0)
 	{
 		if($this->_destroy())
 			$data['success'] = $this->_editStatus;
 			
-		$data['groups'] = $this->groups->all();
+		$data['groups'] = $this->groups->all($page);
+		
+		$pconf['total_rows'] = $this->db->count_all('groups');
+		$pconf['per_page'] = $this->config->item('cms_list_limit');
+		$pconf['base_url'] = site_url('admin/groups/index/');
+		
+		$this->pagination->initialize($pconf);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/groups/index', $data);

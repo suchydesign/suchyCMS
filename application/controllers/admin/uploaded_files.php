@@ -15,12 +15,19 @@ class Uploaded_files extends CI_Controller
 
 	}
 
-	public function index()
+	public function index($page = 0)
 	{
 		if($this->_destroy())
 			$data['success'] = $this->_editStatus;
 			
-		$data['uploaded_files'] = $this->uploaded_files->all();
+		$data['uploaded_files'] = $this->uploaded_files->all($page);
+		
+		$pconf['total_rows'] = $this->db->count_all('uploaded_files');
+		$pconf['per_page'] = $this->config->item('cms_list_limit');
+		$pconf['base_url'] = site_url('admin/uploaded_files/index/');
+		
+		$this->pagination->initialize($pconf);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/uploaded_files/index', $data);

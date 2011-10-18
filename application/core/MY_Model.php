@@ -12,32 +12,52 @@ class MY_Model extends CI_Model
         parent::__construct();
     }
 	
-	public function all()
+	public function all($page)
 	{
-		$query = $this->db->get($this->tableName);
-		return $this->_return_array_of_obj($query->result());
+		$limit = $this->config->item('cms_list_limit');
+		$query = $this->db->limit($limit, $page)
+						  ->get($this->tableName);
+		if($query)
+			return $this->_return_array_of_obj($query->result());
+		else
+			return $this->_error();
 	}
 	
 	public function find($data) 
 	{			
 		$query = $this->db->get_where($this->tableName, $data);
-		return $this->_return_array_of_obj($query->result());
+		if($query)
+			return $this->_return_array_of_obj($query->result());
+		else
+			return $this->_error();
 	}
 	
 	public function create($data)
 	{
-		return $this->db->insert($this->tableName, $data);
+		$query = $this->db->insert($this->tableName, $data);
+		if($query)
+			return TRUE;
+		else
+			return $this->_error();
 	}
 	
 	public function update($data)
 	{
-		return $this->db->where($this->pk, $data['id'])
+		$query = $this->db->where($this->pk, $data['id'])
 						->update($this->tableName, $data);
+		if($query)
+			return TRUE;
+		else
+			return $this->_error();
 	}
 	
 	public function delete($data)
 	{
-		return $this->db->delete($this->tableName, $data);
+		$query = $this->db->delete($this->tableName, $data);
+		if($query)
+			return TRUE;
+		else
+			return $this->_error();
 	}
 	
 	protected function _return_array_of_obj($result)
@@ -80,6 +100,12 @@ class MY_Model extends CI_Model
 	public function get_belongs_to()
 	{
 		return $this->belongsTo;
+	}
+	
+	protected function _error()
+	{
+		show_error('A Database Error Occurred');
+		return false;
 	}
 
 }

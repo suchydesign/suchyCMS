@@ -23,7 +23,7 @@
 	</tr>
 	<tr>
 		<th>applications_id</th>
-		<td><?=$access[0]->applications_id; ?></td>
+		<td><?=$applications[0]->name; ?></td>
 	</tr>
 
 </table>

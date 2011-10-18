@@ -43,7 +43,7 @@ $route['404_override'] = '';
 
 $route['admin/([a-z0-9~%.:_-]+)/new'] = 'admin/$1/new_one';
 $route['admin/([a-z0-9~%.:_-]+)/(:num)'] = 'admin/$1/show/$2';
-
+//$route['admin/([a-z0-9~%.:_-]+)/page/(:num)'] = 'admin/$1/index/$2';
 
 
 /* End of file routes.php */

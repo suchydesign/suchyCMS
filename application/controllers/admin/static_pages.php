@@ -14,12 +14,19 @@ class Static_pages extends CI_Controller
 
 	}
 
-	public function index()
+	public function index($page = 0)
 	{
 		if($this->_destroy())
 			$data['success'] = $this->_editStatus;
 			
-		$data['static_pages'] = $this->static_pages->all();
+		$data['static_pages'] = $this->static_pages->all($page);
+		
+		$pconf['total_rows'] = $this->db->count_all('static_pages');
+		$pconf['per_page'] = $this->config->item('cms_list_limit');
+		$pconf['base_url'] = site_url('admin/static_pages/index/');
+		
+		$this->pagination->initialize($pconf);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/static_pages/index', $data);

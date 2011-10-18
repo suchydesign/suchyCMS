@@ -10,14 +10,18 @@ class Access_model extends MY_Model
 		$this->_set_belongs_to();
     }
 	
-	public function all()
+	public function all($page = 0)
 	{
+		$limit = $this->config->item('cms_list_limit');
 		$query = $this->db->select('access.*, applications.name')
 						  ->from($this->tableName)
 						  ->join('applications', 'access.applications_id = applications.id')
+						  ->limit($limit, $page)
 						  ->get();
 		if($query)
 			return $this->_return_array_of_obj($query->result());
+		else
+			return $this->_error();
 	}
 
 }

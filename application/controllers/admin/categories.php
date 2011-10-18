@@ -13,12 +13,19 @@ class Categories extends CI_Controller
 
 	}
 
-	public function index()
+	public function index($page = 0)
 	{
 		if($this->_destroy())
 			$data['success'] = $this->_editStatus;
 			
-		$data['categories'] = $this->categories->all();
+		$data['categories'] = $this->categories->all($page);
+		
+		$pconf['total_rows'] = $this->db->count_all('categories');
+		$pconf['per_page'] = $this->config->item('cms_list_limit');
+		$pconf['base_url'] = site_url('admin/categories/index/');
+		
+		$this->pagination->initialize($pconf);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/categories/index', $data);

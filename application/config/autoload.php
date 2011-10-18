@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'security');
+$autoload['libraries'] = array('database', 'session', 'security', 'pagination');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url', 'form');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('cms');
 
 
 /*

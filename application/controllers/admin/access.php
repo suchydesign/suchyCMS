@@ -15,12 +15,19 @@ class Access extends CI_Controller
 
 	}
 
-	public function index()
+	public function index($page = 0)
 	{
 		if($this->_destroy())
 			$data['success'] = $this->_editStatus;
 			
-		$data['access'] = $this->access->all();
+		$data['access'] = $this->access->all($page);
+		
+		$pconf['total_rows'] = $this->db->count_all('access');
+		$pconf['per_page'] = $this->config->item('cms_list_limit');
+		$pconf['base_url'] = site_url('admin/access/index/');
+		
+		$this->pagination->initialize($pconf);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/access/index', $data);
@@ -58,6 +65,10 @@ class Access extends CI_Controller
 	{
 		if($data['access'] = $this->access->find(array('id' => $id)))
 		{
+			$id = array(
+				'id' => $data['access'][0]->applications_id
+			);
+			$data['applications'] = $this->applications->find($id);
 			$this->load->view('admin/layout_parts/header', $data);
 			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/access/show', $data);
