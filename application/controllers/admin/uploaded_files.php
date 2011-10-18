@@ -21,7 +21,10 @@ class Uploaded_files extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['uploaded_files'] = $this->uploaded_files->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/uploaded_files/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -29,10 +32,12 @@ class Uploaded_files extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['uploaded_filesDataTypes'] = $this->uploaded_files->get_data_types();
 		$data['users'] = $this->users->all();
 		$data['file_types'] = $this->file_types->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/uploaded_files/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -53,7 +58,12 @@ class Uploaded_files extends CI_Controller
 	public function show($id)
 	{
 		if($data['uploaded_files'] = $this->uploaded_files->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/uploaded_files/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -63,11 +73,15 @@ class Uploaded_files extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['uploaded_filesDataTypes'] = $this->uploaded_files->get_data_types();
 		$data['users'] = $this->users->all();
 		$data['file_types'] = $this->file_types->all();
 		if($data['uploaded_files'] = $this->uploaded_files->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/uploaded_files/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}

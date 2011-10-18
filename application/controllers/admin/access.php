@@ -20,7 +20,10 @@ class Access extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['access'] = $this->access->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/access/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -28,9 +31,11 @@ class Access extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['accessDataTypes'] = $this->access->get_data_types();
 		$data['applications'] = $this->applications->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/access/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -51,7 +56,12 @@ class Access extends CI_Controller
 	public function show($id)
 	{
 		if($data['access'] = $this->access->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/access/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -61,10 +71,14 @@ class Access extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['accessDataTypes'] = $this->access->get_data_types();
 		$data['applications'] = $this->applications->all();
 		if($data['access'] = $this->access->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/access/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}

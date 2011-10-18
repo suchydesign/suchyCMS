@@ -19,7 +19,10 @@ class Applications extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['applications'] = $this->applications->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/applications/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -27,8 +30,10 @@ class Applications extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['applicationsDataTypes'] = $this->applications->get_data_types();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/applications/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -49,7 +54,12 @@ class Applications extends CI_Controller
 	public function show($id)
 	{
 		if($data['applications'] = $this->applications->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/applications/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -59,9 +69,13 @@ class Applications extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['applicationsDataTypes'] = $this->applications->get_data_types();
 		if($data['applications'] = $this->applications->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/applications/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}

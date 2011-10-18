@@ -20,7 +20,10 @@ class Comments extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['comments'] = $this->comments->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/comments/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -28,9 +31,11 @@ class Comments extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['commentsDataTypes'] = $this->comments->get_data_types();
 		$data['users'] = $this->users->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/comments/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -51,7 +56,12 @@ class Comments extends CI_Controller
 	public function show($id)
 	{
 		if($data['comments'] = $this->comments->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/comments/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -61,10 +71,14 @@ class Comments extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['commentsDataTypes'] = $this->comments->get_data_types();
 		$data['users'] = $this->users->all();
 		if($data['comments'] = $this->comments->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/comments/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}

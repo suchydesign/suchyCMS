@@ -21,7 +21,10 @@ class Galleries extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['galleries'] = $this->galleries->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/galleries/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -29,10 +32,12 @@ class Galleries extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['galleriesDataTypes'] = $this->galleries->get_data_types();
 		$data['categories'] = $this->categories->all();
 		$data['users'] = $this->users->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/galleries/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -53,7 +58,12 @@ class Galleries extends CI_Controller
 	public function show($id)
 	{
 		if($data['galleries'] = $this->galleries->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/galleries/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -63,11 +73,15 @@ class Galleries extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['galleriesDataTypes'] = $this->galleries->get_data_types();
 		$data['categories'] = $this->categories->all();
 		$data['users'] = $this->users->all();
 		if($data['galleries'] = $this->galleries->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/galleries/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}

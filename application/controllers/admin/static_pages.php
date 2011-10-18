@@ -20,7 +20,10 @@ class Static_pages extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['static_pages'] = $this->static_pages->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/static_pages/index', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	public function new_one()
@@ -28,9 +31,11 @@ class Static_pages extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['static_pagesDataTypes'] = $this->static_pages->get_data_types();
 		$data['users'] = $this->users->all();
+		$this->load->view('admin/layout_parts/header', $data);
+		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/static_pages/new_one', $data);
+		$this->load->view('admin/layout_parts/footer', $data);
 	}
 	
 	protected function _create()
@@ -51,7 +56,12 @@ class Static_pages extends CI_Controller
 	public function show($id)
 	{
 		if($data['static_pages'] = $this->static_pages->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/static_pages/show', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
@@ -61,10 +71,14 @@ class Static_pages extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['static_pagesDataTypes'] = $this->static_pages->get_data_types();
 		$data['users'] = $this->users->all();
 		if($data['static_pages'] = $this->static_pages->find(array('id' => $id)))
+		{
+			$this->load->view('admin/layout_parts/header', $data);
+			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/static_pages/edit', $data);
+			$this->load->view('admin/layout_parts/footer', $data);
+		}
 		else
 			show_404(current_url());
 	}
