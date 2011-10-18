@@ -7,23 +7,8 @@ $config['access/_update'] = array(
 		'rules' => 'trim|required|integer|xss_clean'
 	),
 	array(
-		'field' => 'select',
-		'label' => 'select',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'create',
-		'label' => 'create',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'update',
-		'label' => 'update',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'delete',
-		'label' => 'delete',
+		'field' => 'groups_id',
+		'label' => 'groups_id',
 		'rules' => 'trim|required|integer|xss_clean'
 	),
 	array(
@@ -34,23 +19,8 @@ $config['access/_update'] = array(
 
 $config['access/_create'] = array(
 	array(
-		'field' => 'select',
-		'label' => 'select',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'create',
-		'label' => 'create',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'update',
-		'label' => 'update',
-		'rules' => 'trim|required|integer|xss_clean'
-	),
-	array(
-		'field' => 'delete',
-		'label' => 'delete',
+		'field' => 'groups_id',
+		'label' => 'groups_id',
 		'rules' => 'trim|required|integer|xss_clean'
 	),
 	array(

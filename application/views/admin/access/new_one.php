@@ -24,6 +24,14 @@
 		<td><?=form_input('delete', ($this->input->post('delete') ? $this->input->post('delete') : '')); ?></td>
 	</tr>
 	<tr>
+		<th><label for="update_all">update_all</label></th>
+		<td><?=form_input('update_all', ($this->input->post('update_all') ? $this->input->post('update_all') : '')); ?></td>
+	</tr>
+	<tr>
+		<th><label for="delete_all">delete_all</label></th>
+		<td><?=form_input('delete_all', ($this->input->post('delete_all') ? $this->input->post('delete_all') : '')); ?></td>
+	</tr>
+	<tr>
 		<th><label for="groups_id">groups_id</label></th>
 		<td>			
 			<?php if(!empty($groups)): ?>

@@ -15,6 +15,8 @@
 		<th>create</th>
 		<th>update</th>
 		<th>delete</th>
+		<th>update_all</th>
+		<th>delete_all</th>
 		<th>groups</th>
 		<th>application</th>
 		<th colspan="3">actions</th>
@@ -26,6 +28,8 @@
 		<td><?=$_access->create; ?></td>
 		<td><?=$_access->update; ?></td>
 		<td><?=$_access->delete; ?></td>
+		<td><?=$_access->update_all; ?></td>
+		<td><?=$_access->delete_all; ?></td>
 		<td><?=anchor('admin/groups/' . $_access->groups_id, $_access->gname); ?></td>
 		<td><?=anchor('admin/applications/' . $_access->applications_id, $_access->name); ?></td>
 		<td><?=anchor('admin/access/' . $_access->id, 'view'); ?></td>

@@ -22,6 +22,14 @@
 		<td><?=$access[0]->delete; ?></td>
 	</tr>
 	<tr>
+		<th>update_all</th>
+		<td><?=$access[0]->update_all; ?></td>
+	</tr>
+	<tr>
+		<th>delete_all</th>
+		<td><?=$access[0]->delete_all; ?></td>
+	</tr>
+	<tr>
 		<th>groups_id</th>
 		<td><?=$groups[0]->name; ?></td>
 	</tr>

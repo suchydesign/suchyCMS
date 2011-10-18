@@ -127,6 +127,10 @@ div#content {
 	margin: 10px 10px 10px 0;
 }
 
+div#content textarea {
+	width: 650px;
+}
+
 div#content table {
 	border-collapse: separate;
 	border-spacing: 2px;
