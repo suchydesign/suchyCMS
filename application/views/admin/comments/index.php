@@ -20,7 +20,7 @@
 	</tr>
 	<?php foreach($comments as $_comments): ?>
 	<tr>
-		<td><?=$_comments->id; ?></td>
+		<th class="idcol"><?=$_comments->id; ?></th>
 		<td><?=$_comments->title; ?></td>
 		<td><?=$_comments->content; ?></td>
 		<td><?=$_comments->created; ?></td>

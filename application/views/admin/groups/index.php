@@ -18,7 +18,7 @@
 	</tr>
 	<?php foreach($groups as $_groups): ?>
 	<tr>
-		<td><?=$_groups->id; ?></td>
+		<th class="idcol"><?=$_groups->id; ?></th>
 		<td><?=$_groups->name; ?></td>
 		<td><?=$_groups->created; ?></td>
 		<td><?=$_groups->active; ?></td>

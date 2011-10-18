@@ -131,10 +131,11 @@ div#content table {
 	border-collapse: separate;
 	border-spacing: 2px;
 	width: 100%;
+	font-size: 90%;
 }
 
 div#content table th, div#content table td {
-	padding: 3px 6px;
+	padding: 1px 6px;
 }
 
 div#content table th {
@@ -142,8 +143,27 @@ div#content table th {
 	text-align: center;
 }
 
+div#content table th.idcol {
+	text-align: right;
+	padding-right: 1em;
+	width: 4em;
+}
+
 div#content table td {
 	background: #efefef;
+}
+
+div#content table tr:hover td {
+	background: #447BD4;
+}
+
+div#content table tr:hover th {
+	background: #104BA9;
+	color: #fff;
+}
+
+div#content table tr:hover td a {
+	color: #fff;
 }
 
 div#content ul.paginator {
@@ -153,7 +173,9 @@ div#content ul.paginator {
 
 div#content ul.paginator li {
 	display: inline-block;
-	padding: 6px;
+	padding: 2px 6px;
+	margin: 6px 2px;
+	background: #EFEFEF;
 }
 
 div#footer {

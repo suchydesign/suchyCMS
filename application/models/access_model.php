@@ -16,8 +16,9 @@ class Access_model extends MY_Model
 		if($limited)
 			$this->db->limit($limit, $page);
 		
-		$query = $this->db->select('access.*, applications.name')
+		$query = $this->db->select('access.*, groups.name as gname, applications.name')
 						  ->from($this->tableName)
+						  ->join('groups', 'access.groups_id = groups.id')
 						  ->join('applications', 'access.applications_id = applications.id')
 						  ->order_by('access.id')
 						  ->get();

@@ -24,7 +24,7 @@
 	</tr>
 	<?php foreach($static_pages as $_static_pages): ?>
 	<tr>
-		<td><?=$_static_pages->id; ?></td>
+		<th class="idcol"><?=$_static_pages->id; ?></th>
 		<td><?=$_static_pages->title; ?></td>
 		<td><?=$_static_pages->seo_url; ?></td>
 		<td><?=$_static_pages->keywords; ?></td>

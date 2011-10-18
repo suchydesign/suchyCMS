@@ -23,7 +23,7 @@
 	</tr>
 	<?php foreach($uploaded_files as $_uploaded_files): ?>
 	<tr>
-		<td><?=$_uploaded_files->id; ?></td>
+		<th class="idcol"><?=$_uploaded_files->id; ?></th>
 		<td><?=$_uploaded_files->title; ?></td>
 		<td><?=$_uploaded_files->description; ?></td>
 		<td><?=$_uploaded_files->filename; ?></td>

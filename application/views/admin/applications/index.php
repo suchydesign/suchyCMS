@@ -16,7 +16,7 @@
 	</tr>
 	<?php foreach($applications as $_applications): ?>
 	<tr>
-		<td><?=$_applications->id; ?></td>
+		<th class="idcol"><?=$_applications->id; ?></th>
 		<td><?=$_applications->name; ?></td>
 		<td><?=anchor('admin/applications/' . $_applications->id, 'view'); ?></td>
 		<td><?=anchor('admin/applications/edit/' . $_applications->id, 'edit'); ?></td>

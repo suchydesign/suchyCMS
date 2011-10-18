@@ -21,7 +21,7 @@
 	</tr>
 	<?php foreach($users as $_users): ?>
 	<tr>
-		<td><?=$_users->id; ?></td>
+		<th class="idcol"><?=$_users->id; ?></th>
 		<td><?=$_users->name; ?></td>
 		<td><?=$_users->surname; ?></td>
 		<td><?=$_users->email; ?></td>

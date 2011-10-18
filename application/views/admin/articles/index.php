@@ -26,7 +26,7 @@
 	</tr>
 	<?php foreach($articles as $_articles): ?>
 	<tr>
-		<td><?=$_articles->id; ?></td>
+		<th class="idcol"><?=$_articles->id; ?></th>
 		<td><?=$_articles->title; ?></td>
 		<td><?=$_articles->seo_url; ?></td>
 		<td><?=$_articles->keywords; ?></td>

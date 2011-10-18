@@ -18,7 +18,7 @@
 	</tr>
 	<?php foreach($file_types as $_file_types): ?>
 	<tr>
-		<td><?=$_file_types->id; ?></td>
+		<th class="idcol"><?=$_file_types->id; ?></th>
 		<td><?=$_file_types->name; ?></td>
 		<td><?=$_file_types->mime_type; ?></td>
 		<td><?=$_file_types->ext; ?></td>

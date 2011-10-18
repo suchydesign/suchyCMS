@@ -21,7 +21,7 @@
 	</tr>
 	<?php foreach($categories as $_categories): ?>
 	<tr>
-		<td><?=$_categories->id; ?></td>
+		<th class="idcol"><?=$_categories->id; ?></th>
 		<td><?=$_categories->title; ?></td>
 		<td><?=$_categories->seo_url; ?></td>
 		<td><?=$_categories->keywords; ?></td>

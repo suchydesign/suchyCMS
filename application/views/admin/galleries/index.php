@@ -24,7 +24,7 @@
 	</tr>
 	<?php foreach($galleries as $_galleries): ?>
 	<tr>
-		<td><?=$_galleries->id; ?></td>
+		<th class="idcol"><?=$_galleries->id; ?></th>
 		<td><?=$_galleries->title; ?></td>
 		<td><?=$_galleries->seo_url; ?></td>
 		<td><?=$_galleries->keywords; ?></td>
