@@ -1,3 +1,4 @@
+<ul id="menu">	
 	<li><?=anchor('admin/access', 'Access'); ?></li>
 	<li><?=anchor('admin/applications', 'Applications'); ?></li>
 	<li><?=anchor('admin/articles', 'Articles'); ?></li>
@@ -9,3 +10,8 @@
 	<li><?=anchor('admin/static_pages', 'Static_pages'); ?></li>
 	<li><?=anchor('admin/uploaded_files', 'Uploaded_files'); ?></li>
 	<li><?=anchor('admin/users', 'Users'); ?></li>
+	<li><?=form_open(current_url()); ?>
+		<?=form_submit('logout', 'Logout'); ?>
+		<?=form_close(); ?>
+	</li>
+</ul>

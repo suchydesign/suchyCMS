@@ -1,7 +1,3 @@
-<?php $this->load->view('layout_parts/header'); ?>
-<ul id="menu">
-<?php $this->load->view('admin/layout_parts/menu'); ?>
-</ul>
 <h2>Show</h2>
 <table>
 	<?=form_open(current_url()); ?>
@@ -66,4 +62,3 @@
 		echo form_close();
 	?></li>
 </ul>
-<?php $this->load->view('layout_parts/footer'); ?>

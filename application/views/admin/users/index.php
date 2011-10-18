@@ -1,7 +1,3 @@
-<?php $this->load->view('layout_parts/header'); ?>
-<ul id="menu">
-<?php $this->load->view('admin/layout_parts/menu'); ?>
-</ul>
 <h2>List</h2>
 <div id="error_message">	
 	<?php if(isset($success)): ?>
@@ -44,4 +40,3 @@
 	<li><?=anchor('admin/users', 'View all'); ?></li>
 	<li><?=anchor('admin/users/new', 'New'); ?></li>
 </ul>
-<?php $this->load->view('layout_parts/footer'); ?>
