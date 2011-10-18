@@ -23,7 +23,20 @@
 		<th><label for="delete">delete</label></th>
 		<td><?=form_input('delete', ($this->input->post('delete') ? $this->input->post('delete') : '')); ?></td>
 	</tr>
-
+	<tr>
+		<th><label for="groups_id">groups_id</label></th>
+		<td>			
+			<?php if(!empty($groups)): ?>
+			<select name="groups_id">
+			<?php foreach($groups as $_groups): ?>
+				<option value="<?=$_groups->id; ?>" <?php if($_groups->id == ($this->input->post('groups_id') ? $this->input->post('groups_id') : '')) echo "selected=\"selected\""; ?>><?=$_groups->name; ?></option>
+			<?php endforeach; ?>
+			</select>
+			<?php else: ?>
+				<?=form_input('groups_id', ($this->input->post('groups_id') ? $this->input->post('groups_id') : '')); ?>
+			<?php endif; ?>
+		</td>
+	</tr>
 	<tr>
 		<th><label for="applications_id">applications_id</label></th>
 		<td>

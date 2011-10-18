@@ -21,10 +21,6 @@
 		<td><?=form_input('filename', ($this->input->post('filename') ? $this->input->post('filename') : $uploaded_files[0]->filename)); ?></td>
 	</tr>
 	<tr>
-		<th><label for="created">created</label></th>
-		<td><?=form_input('created', ($this->input->post('created') ? $this->input->post('created') : $uploaded_files[0]->created)); ?></td>
-	</tr>
-	<tr>
 		<th><label for="active">active</label></th>
 		<td><?=form_input('active', ($this->input->post('active') ? $this->input->post('active') : $uploaded_files[0]->active)); ?></td>
 	</tr>

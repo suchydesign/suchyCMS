@@ -12,6 +12,7 @@ class Access extends CI_Controller
 		$this->load->model('Access_model', 'access');
 		
 		$this->load->model('Applications_model', 'applications');
+		$this->load->model('Groups_model', 'groups');
 
 	}
 
@@ -39,7 +40,9 @@ class Access extends CI_Controller
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 			
-		$data['applications'] = $this->applications->all();
+		$data['applications'] = $this->applications->all(0, false);
+		$data['groups'] = $this->groups->all(0, false);
+		
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/access/new_one', $data);
@@ -69,6 +72,12 @@ class Access extends CI_Controller
 				'id' => $data['access'][0]->applications_id
 			);
 			$data['applications'] = $this->applications->find($id);
+			
+			$id = array(
+				'id' => $data['access'][0]->groups_id
+			);
+			$data['groups'] = $this->groups->find($id);
+			
 			$this->load->view('admin/layout_parts/header', $data);
 			$this->load->view('admin/layout_parts/left', $data);
 			$this->load->view('admin/access/show', $data);
@@ -84,6 +93,8 @@ class Access extends CI_Controller
 			$data['success'] = $this->_editStatus;
 			
 		$data['applications'] = $this->applications->all(0, FALSE);
+		$data['groups'] = $this->groups->all(0, false);
+		
 		if($data['access'] = $this->access->find(array('id' => $id)))
 		{
 			$this->load->view('admin/layout_parts/header', $data);

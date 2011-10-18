@@ -284,11 +284,17 @@ CREATE  TABLE IF NOT EXISTS `cms`.`access` (
   `create` INT UNSIGNED NULL ,
   `update` INT UNSIGNED NULL ,
   `delete` INT UNSIGNED NULL ,
+  `groups_id` INT UNSIGNED NULL ,
   `applications_id` INT UNSIGNED NULL ,
   PRIMARY KEY (`id`) ,
   CONSTRAINT `fk_access_table11`
     FOREIGN KEY (`applications_id` )
     REFERENCES `cms`.`applications` (`id` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_access_groups1`
+    FOREIGN KEY (`groups_id` )
+    REFERENCES `cms`.`groups` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
@@ -296,6 +302,8 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
 CREATE INDEX `fk_access_table11` ON `cms`.`access` (`applications_id` ASC) ;
+
+CREATE INDEX `fk_access_groups1` ON `cms`.`access` (`groups_id` ASC) ;
 
 
 -- -----------------------------------------------------
@@ -408,32 +416,6 @@ COLLATE = utf8_general_ci;
 CREATE INDEX `fk_files_has_comments_comments1` ON `cms`.`uploaded_files_has_comments` (`comments_id` ASC) ;
 
 CREATE INDEX `fk_files_has_comments_files1` ON `cms`.`uploaded_files_has_comments` (`uploaded_files_id` ASC) ;
-
-
--- -----------------------------------------------------
--- Table `cms`.`groups_has_access`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `cms`.`groups_has_access` ;
-
-CREATE  TABLE IF NOT EXISTS `cms`.`groups_has_access` (
-  `groups_id` INT UNSIGNED NULL ,
-  `access_id` INT UNSIGNED NULL ,
-  PRIMARY KEY (`groups_id`, `access_id`) ,
-  CONSTRAINT `fk_groups_has_access_groups1`
-    FOREIGN KEY (`groups_id` )
-    REFERENCES `cms`.`groups` (`id` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_groups_has_access_access1`
-    FOREIGN KEY (`access_id` )
-    REFERENCES `cms`.`access` (`id` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_groups_has_access_access1` ON `cms`.`groups_has_access` (`access_id` ASC) ;
-
-CREATE INDEX `fk_groups_has_access_groups1` ON `cms`.`groups_has_access` (`groups_id` ASC) ;
 
 
 -- -----------------------------------------------------

@@ -22,6 +22,10 @@
 		<td><?=$access[0]->delete; ?></td>
 	</tr>
 	<tr>
+		<th>groups_id</th>
+		<td><?=$groups[0]->name; ?></td>
+	</tr>
+	<tr>
 		<th>applications_id</th>
 		<td><?=$applications[0]->name; ?></td>
 	</tr>

@@ -25,10 +25,6 @@
 		<td><?=form_input('passwd', ($this->input->post('passwd') ? $this->input->post('passwd') : $users[0]->passwd)); ?></td>
 	</tr>
 	<tr>
-		<th><label for="created">created</label></th>
-		<td><?=form_input('created', ($this->input->post('created') ? $this->input->post('created') : $users[0]->created)); ?></td>
-	</tr>
-	<tr>
 		<th><label for="active">active</label></th>
 		<td><?=form_input('active', ($this->input->post('active') ? $this->input->post('active') : $users[0]->active)); ?></td>
 	</tr>

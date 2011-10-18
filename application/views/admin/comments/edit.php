@@ -17,10 +17,6 @@
 		<td><?=form_textarea('content', ($this->input->post('content') ? $this->input->post('content') : $comments[0]->content)); ?></td>
 	</tr>
 	<tr>
-		<th><label for="created">created</label></th>
-		<td><?=form_input('created', ($this->input->post('created') ? $this->input->post('created') : $comments[0]->created)); ?></td>
-	</tr>
-	<tr>
 		<th><label for="active">active</label></th>
 		<td><?=form_input('active', ($this->input->post('active') ? $this->input->post('active') : $comments[0]->active)); ?></td>
 	</tr>

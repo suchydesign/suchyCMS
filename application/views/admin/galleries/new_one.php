@@ -24,10 +24,6 @@
 		<td><?=form_textarea('description', ($this->input->post('description') ? $this->input->post('description') : '')); ?></td>
 	</tr>
 	<tr>
-		<th><label for="created">created</label></th>
-		<td><?=form_input('created', ($this->input->post('created') ? $this->input->post('created') : '')); ?></td>
-	</tr>
-	<tr>
 		<th><label for="active">active</label></th>
 		<td><?=form_input('active', ($this->input->post('active') ? $this->input->post('active') : '')); ?></td>
 	</tr>
