@@ -83,7 +83,7 @@ class Access extends CI_Controller
 		if($this->_update())
 			$data['success'] = $this->_editStatus;
 			
-		$data['applications'] = $this->applications->all();
+		$data['applications'] = $this->applications->all(0, FALSE);
 		if($data['access'] = $this->access->find(array('id' => $id)))
 		{
 			$this->load->view('admin/layout_parts/header', $data);

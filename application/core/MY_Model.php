@@ -12,11 +12,13 @@ class MY_Model extends CI_Model
         parent::__construct();
     }
 	
-	public function all($page)
+	public function all($page = 0, $limited = TRUE)
 	{
 		$limit = $this->config->item('cms_list_limit');
-		$query = $this->db->limit($limit, $page)
-						  ->get($this->tableName);
+		if($limited)
+			$this->db->limit($limit, $page);
+
+		$query = $this->db->get($this->tableName);		
 		if($query)
 			return $this->_return_array_of_obj($query->result());
 		else
