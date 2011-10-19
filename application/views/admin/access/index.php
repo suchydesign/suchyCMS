@@ -24,12 +24,12 @@
 	<?php foreach($access as $_access): ?>
 	<tr>
 		<th class="idcol"><?=$_access->id; ?></th>
-		<td><?=$_access->select; ?></td>
-		<td><?=$_access->create; ?></td>
-		<td><?=$_access->update; ?></td>
-		<td><?=$_access->delete; ?></td>
-		<td><?=$_access->update_all; ?></td>
-		<td><?=$_access->delete_all; ?></td>
+		<td><?=yes_no($this, $_access->select); ?></td>
+		<td><?=yes_no($this, $_access->create); ?></td>
+		<td><?=yes_no($this, $_access->update); ?></td>
+		<td><?=yes_no($this, $_access->delete); ?></td>
+		<td><?=yes_no($this, $_access->update_all); ?></td>
+		<td><?=yes_no($this, $_access->delete_all); ?></td>
 		<td><?=anchor('admin/groups/' . $_access->groups_id, $_access->gname); ?></td>
 		<td><?=anchor('admin/applications/' . $_access->applications_id, $_access->name); ?></td>
 		<td><?=anchor('admin/access/' . $_access->id, 'view'); ?></td>

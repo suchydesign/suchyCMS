@@ -10,27 +10,27 @@
 		<?=form_hidden('id', $access[0]->id); ?>
 	<tr>
 		<th><label for="select">select</label></th>
-		<td><?=form_input('select', ($this->input->post('select') ? $this->input->post('select') : $access[0]->select)); ?></td>
+		<td><?=yes_no_form_select($this, 'select', ($this->input->post('select') ? $this->input->post('select') : $access[0]->select)); ?></td>
 	</tr>
 	<tr>
 		<th><label for="create">create</label></th>
-		<td><?=form_input('create', ($this->input->post('create') ? $this->input->post('create') : $access[0]->create)); ?></td>
+		<td><?=yes_no_form_select($this, 'create', ($this->input->post('create') ? $this->input->post('create') : $access[0]->create)); ?></td>
 	</tr>
 	<tr>
 		<th><label for="update">update</label></th>
-		<td><?=form_input('update', ($this->input->post('update') ? $this->input->post('update') : $access[0]->update)); ?></td>
+		<td><?=yes_no_form_select($this, 'update', ($this->input->post('update') ? $this->input->post('update') : $access[0]->update)); ?></td>
 	</tr>
 	<tr>
 		<th><label for="delete">delete</label></th>
-		<td><?=form_input('delete', ($this->input->post('delete') ? $this->input->post('delete') : $access[0]->delete)); ?></td>
+		<td><?=yes_no_form_select($this, 'delete', ($this->input->post('delete') ? $this->input->post('delete') : $access[0]->delete)); ?></td>
 	</tr>
 	<tr>
 		<th><label for="update_all">update_all</label></th>
-		<td><?=form_input('update_all', ($this->input->post('update_all') ? $this->input->post('update_all') : $access[0]->update_all)); ?></td>
+		<td><?=yes_no_form_select($this, 'update_all', ($this->input->post('update_all') ? $this->input->post('update_all') : $access[0]->update_all)); ?></td>
 	</tr>
 	<tr>
 		<th><label for="delete_all">delete_all</label></th>
-		<td><?=form_input('delete_all', ($this->input->post('delete_all') ? $this->input->post('delete_all') : $access[0]->delete_all)); ?></td>
+		<td><?=yes_no_form_select($this, 'delete_all', ($this->input->post('delete_all') ? $this->input->post('delete_all') : $access[0]->delete_all)); ?></td>
 	</tr>
 
 	<tr>

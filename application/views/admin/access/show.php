@@ -7,27 +7,27 @@
 	</tr>
 	<tr>
 		<th>select</th>
-		<td><?=$access[0]->select; ?></td>
+		<td><?=yes_no($this, $access[0]->select); ?></td>
 	</tr>
 	<tr>
 		<th>create</th>
-		<td><?=$access[0]->create; ?></td>
+		<td><?=yes_no($this, $access[0]->create); ?></td>
 	</tr>
 	<tr>
 		<th>update</th>
-		<td><?=$access[0]->update; ?></td>
+		<td><?=yes_no($this, $access[0]->update); ?></td>
 	</tr>
 	<tr>
 		<th>delete</th>
-		<td><?=$access[0]->delete; ?></td>
+		<td><?=yes_no($this, $access[0]->delete); ?></td>
 	</tr>
 	<tr>
 		<th>update_all</th>
-		<td><?=$access[0]->update_all; ?></td>
+		<td><?=yes_no($this, $access[0]->update_all); ?></td>
 	</tr>
 	<tr>
 		<th>delete_all</th>
-		<td><?=$access[0]->delete_all; ?></td>
+		<td><?=yes_no($this, $access[0]->delete_all); ?></td>
 	</tr>
 	<tr>
 		<th>groups_id</th>
