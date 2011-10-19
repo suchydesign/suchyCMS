@@ -96,7 +96,7 @@ $autoload['config'] = array('cms');
 |
 */
 
-$autoload['language'] = array();
+$autoload['language'] = array('cms');
 
 
 /*
