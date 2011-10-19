@@ -34,10 +34,10 @@ class Categories extends CI_Controller
 	
 	public function new_one()
 	{
+		$data = array();
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 		
-		$data = array();
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/categories/new_one', $data);
@@ -51,7 +51,8 @@ class Categories extends CI_Controller
 			{	
 				unset($_POST['create']);
 				if($this->categories->create($_POST))
-				{	
+				{
+					echo "halooo";
 					unset($_POST);
 					return TRUE;
 				}

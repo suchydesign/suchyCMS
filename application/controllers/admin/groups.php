@@ -34,10 +34,10 @@ class Groups extends CI_Controller
 	
 	public function new_one()
 	{
+		$data = array();
 		if($this->_create())
 			$data['success'] = $this->_editStatus;
 		
-		$data = array();
 		$this->load->view('admin/layout_parts/header', $data);
 		$this->load->view('admin/layout_parts/left', $data);
 		$this->load->view('admin/groups/new_one', $data);
