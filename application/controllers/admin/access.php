@@ -53,10 +53,11 @@ class Access extends CI_Controller
 	{
 		if($this->input->post('create_new'))
 			if($this->form_validation->run('access/_create'))
-			{	
+			{
 				unset($_POST['create_new']);
+				$this->_prepare_post();
 				if($this->access->create($_POST))
-				{	
+				{
 					unset($_POST);
 					return TRUE;
 				}
@@ -112,6 +113,7 @@ class Access extends CI_Controller
 			if($this->form_validation->run('access/_update'))
 			{	
 				unset($_POST['update_acc']);
+				$this->_prepare_post();
 				if($this->access->update($_POST))	
 				{	
 					unset($_POST);
@@ -135,6 +137,19 @@ class Access extends CI_Controller
 			}
 		return FALSE;
 	}
+	
+	protected function _prepare_post()
+	{
+		$dt = $this->access->get_data_types();
+		unset($dt['id']);
+		unset($dt['groups_id']);
+		unset($dt['applications_id']);
+				
+		foreach($dt as $k => $v)
+			if(!isset($_POST[$k]))
+				$_POST[$k] = 0;
+	}
+
 }
 
 /* End of file access.php */
