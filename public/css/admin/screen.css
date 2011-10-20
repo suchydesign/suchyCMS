@@ -86,11 +86,43 @@ ul#menu {
 	height: 40px;
 	list-style: none;
 	background: #052D6E;
+	border-bottom: 5px solid #FFE373;
 }
 
 ul#menu li {
 	display: block;
 	float: left;
+	position: relative;
+}
+
+ul#menu li ul {
+	display:none;
+	font-size: 90%;
+}
+
+ul#menu li:hover ul {
+	position: absolute;
+	top: 40px; left:0;
+	display:block;
+	background: #447BD4;
+}
+
+ul#menu li:hover ul li {
+	display: block;
+	float: none;
+	border-bottom: 1px solid #052D6E;
+	border-right: 1px solid #052D6E;
+	border-left: 1px solid #052D6E;
+}
+
+ul#menu li:hover ul li a {
+	display: block;
+	float: none;
+	line-height: 3em;
+}
+
+ul#menu li:hover ul li a:hover {
+	background: #052D6E;
 }
 
 ul#menu li a {
@@ -104,8 +136,12 @@ ul#menu li a {
 	font-size: 90%;
 }
 
-ul#menu li a:hover {
+ul#menu li a:hover, ul#menu li:hover {
 	background: #447BD4;
+}
+
+ul#menu li:hover > a {
+	border-left: 1px solid #052D6E;
 }
 
 div#container {
